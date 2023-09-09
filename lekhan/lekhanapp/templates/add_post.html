@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Create Blog{% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    <h1>Add Blog Post</h1>
+    <br/><br/>
+
+    <div class='form-group'>
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media}}
+        {{ form.as_p}}
+        <button class='btn btn-secondary'>POST</button>
+    {% comment %} </form> {% endcomment %}
+    </div>
+
+    <script>
+        var name = '{{user.id}}';
+        document.getElementById('auscode').value=name;
+    </script>
+    {% else %}
+    com'on dude again you are here, you are not allowed here
+
+{% endif %}
+
+{% endblock  %}
