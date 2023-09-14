@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>Post</h1>
-<ul>
+<!-- <ul>
     {% for post in object_list %}
         <li>
             <a href="{% url 'article-detail' post.pk %}">
@@ -23,7 +23,34 @@
             <br/>
         </li>
     {% endfor %}
-</ul>
+</ul> -->
+{% for post in object_list %}
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://images.pexels.com/photos/920154/pexels-photo-920154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="img-fluid object-fit-contain rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'article-detail' post.pk %}">
+                    {{ post.title }}</a>
+                </h5>
+                <small class="card-text "><small> Category: <a href="{% url 'category' post.category|slugify %}"> {{post.category}}</a> </small></small><br>
+                <small class="card-text "> <small>Author: {{ post.author.first_name }} {{ post.author.last_name }} </small></small><br>
+                <p class="card-text ">{{ post.snippet }}</p>
+                <p class="card-text "><small class="text-body-secondary">Published on: {{post.post_date}}</small></p>
+                {% if user.is_authenticated %}
+                    {% if user.id == post.author.id %}
+                        <span><a href="{% url 'update_post' post.pk %}">Edit</a></span>
+                        <span><a href="{% url 'delete_post' post.pk %}">Delete</a></span>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 
 
 
