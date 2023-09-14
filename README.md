@@ -103,6 +103,6 @@ If you would like to contribute to Lekhan, please follow these steps:
 
 If you have any questions or need further assistance, feel free to reach out to the project maintainers:
 
-- Email: [harshittext+lehan@gmail.com](mailto:harshittext+lehkan@gmail.com)
+- Email: [harshittext+lekhan@gmail.com](mailto:harshittext+lekhan@gmail.com)
 
 We hope you find Lekhan useful for your blogging needs! Happy blogging!
