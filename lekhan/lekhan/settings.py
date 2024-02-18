@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-q)ys$(z6_0wrtjc-1ak_a+^u88mrw%+!l(9!f8$-f^a-g^mmq%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "lekhanapp",
     "members",
     "ckeditor",
+    'notifications',
 ]
 
 MIDDLEWARE = [
